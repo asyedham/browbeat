@@ -151,6 +151,8 @@ collectd_blockstorage: true
 collectd_objectstorage: true
 collectd_cephstorage: true
 collectd_compute: false
+collectd_graphite: true
+collectd_prometheus: false
 
 ########################
 # Opt-In Collectd plugins configuration:
@@ -309,6 +311,16 @@ regex_info: false
 ping_plugin: false
 ping_interval: 1
 
+############################################
+# Prometheus/Collectd-Exporter Configuration
+############################################
+prometheus_host:
+#Avoid using underscore for prometheus_prefix
+prometheus_prefix:
+prometheus_port: 25826
+#collectd_exporter_port: 9103
+
+
 ########################################
 # Carbon/Graphite Configuration
 ########################################
@@ -339,11 +351,11 @@ forbidden_cloud_names:
 # (if you're using the grafana-docker playbook this does not currently work,
 # it will deploy with admin/admin). If you're uploading dashboards be sure to
 # set the password here to whatever it actually is.
-grafana_host:
+grafana_host: 
 grafana_port: 3000
 grafana_username: admin
 grafana_password: admin
-grafana_apikey:
+grafana_apikey: 
 # Batch number of hosts per row for all-{cpu, memory, disk, network} openstack dashboards
 dashboards_batch: 20
 # For use with all-{cpu, memory, disk, network} openstack dashboards, uses the graphite prefix to create dashboards for specific openstack cloud
